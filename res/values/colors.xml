@@ -24,7 +24,7 @@
     <!-- VideoCastControllerActivity/Fragment -->
     <color name="ccl_cast_activity_progress_text_color">#E5FFFFFF</color>
     <color name="ccl_cast_activity_line1_text_color">#E5FFFFFF</color>
-    <color name="ccl_cast_activity_line2_text_color">#E5AAAAAA</color>
+    <color name="ccl_cast_activity_line2_text_color">#E5DDDDDD</color>
     <color name="ccl_cast_activity_background_color">#000000</color>
     <color name="ccl_cast_activity_text_color">#FFFFFF</color>
 

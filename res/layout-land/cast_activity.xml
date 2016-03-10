@@ -21,34 +21,41 @@
 
     <ImageView
         android:id="@+id/pageview"
-        android:layout_width="@dimen/ccl_pageview_width"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/controllers"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/ccl_cast_activity_background_color"
-        android:scaleType="centerCrop" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="@color/ccl_cast_activity_background_color" />
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/controllers"
-        android:layout_width="fill_parent"
-        android:layout_height="128dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/pageview"
-        android:background="@color/ccl_cast_activity_background_color"
+        android:orientation="horizontal"
+        android:background="#99000000"
         android:visibility="invisible">
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/playback_controls"
-            android:layout_width="fill_parent"
-            android:layout_height="80dp"
-            android:layout_below="@+id/progressbar_controls">
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/skip_previous_button" />
 
             <ImageButton
                 android:id="@+id/play_pause_toggle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_play_circle_white_80dp" />
 
@@ -56,58 +63,42 @@
                 android:id="@+id/next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@+id/play_pause_toggle"
+                android:layout_marginEnd="20dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/skip_next_button" />
-
-            <ImageButton
-                android:id="@+id/previous"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20dp"
-                android:layout_toLeftOf="@+id/play_pause_toggle"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/skip_previous_button" />
 
             <ImageButton
                 android:id="@+id/cc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="20dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/cc" />
 
             <TextView
                 android:id="@+id/live_text"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@+id/play_pause_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:maxLines="1"
                 android:text="@string/ccl_live"
                 android:textColor="@color/ccl_cast_activity_text_color"
-                android:visibility="invisible" />
+                android:visibility="gone" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/progressbar_controls"
-            android:layout_width="fill_parent"
-            android:layout_height="48dp"
-            android:layout_alignParentTop="true">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/start_text"
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
                 android:gravity="center_vertical"
                 android:maxLines="1"
                 android:text="00:00"
@@ -116,10 +107,10 @@
             <TextView
                 android:id="@+id/end_text"
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_alignParentRight="true"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
                 android:layout_alignWithParentIfMissing="true"
-                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
                 android:gravity="center_vertical"
                 android:maxLines="1"
                 android:text="0:00"
@@ -127,52 +118,51 @@
 
             <SeekBar
                 android:id="@+id/seekbar"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_toLeftOf="@+id/end_text"
-                android:layout_toRightOf="@+id/start_text" />
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_toStartOf="@+id/end_text"
+                android:layout_toEndOf="@+id/start_text" />
 
         </RelativeLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/texts"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/pageview"
-        android:background="@color/ccl_cast_activity_background_color"
-        android:paddingTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/controllers"
+        android:paddingBottom="5dp"
         android:visibility="visible">
 
         <com.google.android.libraries.cast.companionlibrary.widgets.MiniController
             android:id="@+id/miniController1"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:visibility="gone" />
 
         <TextView
             android:id="@+id/textview1"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:ellipsize="end"
             android:gravity="center_horizontal"
             android:maxLines="1"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/ccl_cast_activity_line1_text_color" />
+            android:textColor="@color/ccl_cast_activity_line1_text_color"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/textview2"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textview1"
+            android:layout_alignStart="@+id/textview1"
             android:layout_below="@+id/textview1"
             android:ellipsize="end"
             android:fontFamily="sans-serif-light"

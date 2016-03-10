@@ -303,8 +303,8 @@ public class VideoCastControllerActivity extends AppCompatActivity implements
 
     @Override
     public void adjustControllersForLiveStream(boolean isLive) {
-        int visibility = isLive ? View.INVISIBLE : View.VISIBLE;
-        mLiveText.setVisibility(isLive ? View.VISIBLE : View.INVISIBLE);
+        int visibility = isLive ? View.GONE : View.VISIBLE;
+        mLiveText.setVisibility(isLive ? View.VISIBLE : View.GONE);
         mStart.setVisibility(visibility);
         mEnd.setVisibility(visibility);
         mSeekbar.setVisibility(visibility);
@@ -339,13 +339,13 @@ public class VideoCastControllerActivity extends AppCompatActivity implements
                     mSkipNext.setVisibility(View.VISIBLE);
                     mSkipNext.setEnabled(true);
                 } else {
-                    mSkipNext.setVisibility(View.INVISIBLE);
+                    mSkipNext.setVisibility(View.GONE);
                 }
                 if (prevAvailable) {
                     mSkipPrevious.setVisibility(View.VISIBLE);
                     mSkipPrevious.setEnabled(true);
                 } else {
-                    mSkipPrevious.setVisibility(View.INVISIBLE);
+                    mSkipPrevious.setVisibility(View.GONE);
                 }
                 break;
             case CastConfiguration.NEXT_PREV_VISIBILITY_POLICY_ALWAYS:
