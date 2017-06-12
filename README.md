@@ -2,6 +2,8 @@
 
 CastCompanionLibrary-android is a library project to enable developers integrate Cast capabilities into their applications faster and easier.
 
+**CCL is not recommended for new development because it is only for Cast SDK v2. We recommend you [migrate to Cast SDK v3 (Cast Application Framework)](https://developers.google.com/cast/v2/android_migrate_sender). Also see the [Cast SDK v3 guide](https://developers.google.com/cast/docs/android_sender_setup).**
+
 ## Dependencies
 * google-play-services_lib library from the Android SDK (at least version 9.8.+)
 * android-support-v7-appcompat (version 25.0.0 or above)
