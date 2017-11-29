@@ -2,10 +2,12 @@
 
 CastCompanionLibrary-android is a library project to enable developers integrate Cast capabilities into their applications faster and easier.
 
+**CCL is not recommended for new development because it is only for Cast SDK v2. We recommend you [migrate to Cast SDK v3 (Cast Application Framework)](https://developers.google.com/cast/v2/android_migrate_sender). Also see the [Cast SDK v3 guide](https://developers.google.com/cast/docs/android_sender_setup).**
+
 ## Dependencies
-* google-play-services_lib library from the Android SDK (at least version 8.3+)
-* android-support-v7-appcompat (version 23.4.0 or above)
-* android-support-v7-mediarouter (version 23.4.0 or above)
+* google-play-services_lib library from the Android SDK (at least version 9.8.+)
+* android-support-v7-appcompat (version 25.0.0 or above)
+* android-support-v7-mediarouter (version 25.0.0 or above)
 
 ## Set up Instructions
 Set up the project dependencies. To use this library in your project, you have two options:
@@ -15,7 +17,7 @@ dependencies:
 ```shell
  dependencies {
     ...
-    compile 'com.google.android.libraries.cast.companionlibrary:ccl:2.8.4'
+    compile 'com.google.android.libraries.cast.companionlibrary:ccl:2.9.1'
  }
 ```
 
@@ -62,6 +64,14 @@ Your use of this sample is subject to, and by using or downloading the sample fi
 Google Cast Developers Community on Google+ [http://goo.gl/TPLDxj](http://goo.gl/TPLDxj)
 
 ## Change List
+
+2.9.1 (bug fix release)
+ * Changed dependency on Cast SDK to 9.8.0 from 9.8.00
+
+2.9.0 (bug fix release)
+
+ * Addressed the following issues: #322, #324, #326
+ * Updated to the latest versions of Cast SDK and support libraries.
 
 2.8.4 (bug fix release)
 
